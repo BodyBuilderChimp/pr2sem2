@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <getopt.h>
 #include "users.h"
 #include "processes.h"
 #include "logger.h"
@@ -14,7 +15,23 @@ int main(int argc, char *argv[]) {
     char *log_path = NULL;
     char *error_path = NULL;
 
-    while ((opt = getopt(argc, argv, "uph:l:e:")) != -1) {
+struct option long_options[] = {
+        {"users", no_argument, NULL, 'u'},
+        {"processes", no_argument, NULL, 'p'},
+        {"help", no_argument, NULL, 'h'},
+        {"log", required_argument, NULL, 'l'},
+        {"error", required_argument, NULL, 'e'},
+        {NULL, 0, NULL, 0}
+    };
+
+    while (1) {
+        int option_index = 0;
+        opt = getopt_long(argc, argv, "uph:l:e:", long_options, &option_index);
+
+        if (opt == -1) {
+            break;
+        }
+
         switch (opt) {
             case 'u':
                 list_users();
