@@ -1,3 +1,4 @@
+
 ![](https://imagizer.imageshack.com/img924/8661/PZR525.png)
 
 ## Описание
@@ -35,7 +36,9 @@
    ```bash
    ./pr2sem2 -h
    ```
-   Пример использования:
+  
+## Пример использования:
+
    ```bash
    ./pr2sem2 -u
    ./pr2sem2 -p
@@ -43,3 +46,5 @@
    ./pr2sem2 -l logs.txt -u
    ./pr2sem2 -e errors.txt -p
    ```
+
+
