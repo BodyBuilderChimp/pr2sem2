@@ -14,5 +14,32 @@
 
 Сборка программы осуществляется по средствам **CMake**
 
-## Как работает
+## Как заставить работать:
 
+1. **Клонировать репозиторий и перейти в корневой каталог:**
+   ```bash
+   git clone https://github.com/BodyBuilderChimp/pr2sem2
+   cd pr2sem2
+   ```
+2. **Создать и перейти в директорию сборки:**
+   ```bash
+   mkdir build
+   cd build
+   ```
+3. **Запустить CMake и собрать проект:**
+   ```bash
+   cmake ..
+   make
+   ```
+4. **Запустить утилиту:**
+   ```bash
+   ./pr2sem2 -h
+   ```
+   Пример использования:
+   ```bash
+   ./pr2sem2 -u
+   ./pr2sem2 -p
+   ./pr2sem2 -h
+   ./pr2sem2 -l logs.txt -u
+   ./pr2sem2 -e errors.txt -p
+   ```
